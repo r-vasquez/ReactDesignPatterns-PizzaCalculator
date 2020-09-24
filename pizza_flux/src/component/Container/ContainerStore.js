@@ -14,24 +14,24 @@ class ContainerStore extends EventEmitter {
     super();
 
     AppDispatcher.register(action => {
-      if (action.type === 'CHANGEGUEST') {
-        state.guest = action.value;
-        this.emit('change');
-      }
-      if (action.type === 'CHANGESLICES') {
-        state.slices = action.value;
-        this.emit('change');
-      }
-      if (action.type === 'CALCULATEPIZZAS') {
-        console.log(state);
-        if (state.guest && state.slices) {
+      switch (action.type) {
+        case 'CHANGEGUEST':
+          state.guest = action.value;
           state.pizzas = Math.ceil((state.guest * state.slices) / 8);
-        }
-        this.emit('change');
-      }
-      if (action.type === 'RESET') {
-        state = { ...initialState };
-        this.emit('change');
+          this.emit('change');
+          break;
+        case 'CHANGESLICES':
+          state.slices = action.value;
+          state.pizzas = Math.ceil((state.guest * state.slices) / 8);
+          this.emit('change');
+          break;
+        case 'RESET':
+          state = { ...initialState };
+          this.emit('change');
+          break;
+        default:
+          console.error(`Action Type: ${action.type} is not defined`);
+          break;
       }
     });
   }

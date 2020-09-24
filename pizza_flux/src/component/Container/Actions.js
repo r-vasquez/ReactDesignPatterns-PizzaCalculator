@@ -16,12 +16,6 @@ export const changeSlices = value => {
   AppDispatcher.dispatch(action);
 };
 
-export const calculatePizzas = () => {
-  const action = {
-    type: 'CALCULATEPIZZAS'
-  };
-  AppDispatcher.dispatch(action);
-};
 export const reset = () => {
   const action = {
     type: 'RESET'

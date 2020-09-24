@@ -22,17 +22,12 @@ class Container extends Component {
 
   handleGuest = e => {
     Actions.changeGuest(e.target.value);
-    this.calculatePizzas();
   };
 
   handleSlices = e => {
     Actions.changeSlices(e.target.value);
-    this.calculatePizzas();
   };
 
-  calculatePizzas = () => {
-    Actions.calculatePizzas();
-  };
   reset = () => {
     Actions.reset();
   };
@@ -49,7 +44,7 @@ class Container extends Component {
             <input
               id='guest'
               name='guest'
-              type='text'
+              type='number'
               className='inpText'
               value={guest}
               onChange={this.handleGuest}
@@ -60,7 +55,7 @@ class Container extends Component {
             <input
               id='slices'
               name='guest'
-              type='text'
+              type='number'
               className='inpText'
               value={slices}
               onChange={this.handleSlices}
