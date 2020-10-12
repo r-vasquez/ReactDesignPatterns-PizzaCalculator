@@ -1,0 +1,20 @@
+input {
+  text-align: center;
+}
+
+.inpText {
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgb(205, 205, 205);
+}
+
+.btn {
+  text-decoration: none;
+  border: none;
+  background: #9dabc0;
+  color: #fff;
+  padding: 10px 63px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0px 10px 15px rgba(55, 84, 170, 0.25);
+}
